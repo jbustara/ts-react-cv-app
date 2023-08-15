@@ -1,0 +1,20 @@
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .address-contact {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    svg {
+      width: 30px;
+      height: 30px;
+      color: var(--green);
+    }
+    .address-description {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

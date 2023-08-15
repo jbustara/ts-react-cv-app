@@ -1,0 +1,64 @@
+.tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  li {
+    cursor: pointer;
+    text-transform: capitalize;
+    &:not(:last-child)::after {
+      content: " /";
+      pointer-events: none;
+    }
+  }
+}
+.filter-container {
+  display: flex;
+  gap: 20px;
+  .filter-item {
+    position: relative;
+    overflow: hidden;
+    width: 308px;
+    height: 190px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    img {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      transition: opacity 0.8s;
+    }
+    .portfolio-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      background-color: white;
+      opacity: 1;
+      transform: translateY(100%);
+      transition: transform 0.8s, background-color 0.8s;
+      h3 {
+        color: var(--green);
+        margin-bottom: 10px;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+      a {
+        font-size: 14px;
+        color: var(--green);
+        text-decoration: underline;
+      }
+    }
+    &:hover {
+      .portfolio-info {
+        transform: translateY(0);
+        background-color: transparent;
+      }
+      img {
+        opacity: 0.05;
+      }
+    }
+  }
+}

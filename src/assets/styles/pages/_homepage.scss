@@ -1,0 +1,31 @@
+.home-page {
+  background-image: url("./assets/images/background_home.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 720px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
+  text-align: center;
+  color: white;
+  gap: 10px;
+  .photo-box {
+    img {
+      width: 163px;
+      height: 163px;
+    }
+  }
+  .button {
+    margin-top: 30px;
+  }
+  strong {
+    font-size: 45px;
+    align-self: center;
+  }
+  header {
+    font-size: 25px;
+  }
+}
