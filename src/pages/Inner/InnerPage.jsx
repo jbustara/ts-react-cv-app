@@ -29,7 +29,7 @@ const InnerPage = () => {
           <p>{aboutMe}</p>
         </Box>
         <Box title="Education" id="education">
-          <Timeline data={education} />
+          <Timeline education={education} />
         </Box>
         <Box title="Experience" id="experience">
           <Expertise experiences={experiences} />

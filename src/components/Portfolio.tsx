@@ -32,11 +32,11 @@ const Portfolio = ({ portfolio = [] }: props) => {
     <div>
       <ul className="tabs">
         <li onClick={() => handleFilter("*")}>all</li>
-        <li onClick={() => handleFilter(TypePortfolio.nest)}>
-          {TypePortfolio.nest}
+        <li onClick={() => handleFilter(TypePortfolio.backend)}>
+          {TypePortfolio.backend}
         </li>
-        <li onClick={() => handleFilter(TypePortfolio.react)}>
-          {TypePortfolio.react}
+        <li onClick={() => handleFilter(TypePortfolio.frontend)}>
+          {TypePortfolio.frontend}
         </li>
       </ul>
       <ul className="filter-container">
@@ -48,7 +48,9 @@ const Portfolio = ({ portfolio = [] }: props) => {
               <div className="portfolio-info">
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <a href={source}>View resource</a>
+                <a href={source} target="_blank" rel="noreferrer">
+                  View resource
+                </a>
               </div>
             </li>
           );

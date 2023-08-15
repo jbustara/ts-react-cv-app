@@ -28,6 +28,7 @@ export interface FeedbackData {
     photoUrl: string;
     name: string;
     citeUrl: string;
+    site: string;
   };
 }
 
@@ -35,14 +36,14 @@ export interface PortfolioData {
   id: number;
   title: string;
   description: string;
-  card: number;
+  card: cardType;
   source: string;
   type: TypePortfolio;
 }
 
 export enum TypePortfolio {
-  nest = "nest",
-  react = "react",
+  backend = "backend",
+  frontend = "frontend",
 }
 
 export interface EducationData {
@@ -50,3 +51,4 @@ export interface EducationData {
   title: string;
   text: string;
 }
+export type cardType = 1 | 2;

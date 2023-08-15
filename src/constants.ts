@@ -13,7 +13,7 @@ export const profile: ProfileData = {
   avatar:
     "https://media.licdn.com/dms/image/D4E03AQH9pn0dGDuAbA/profile-displayphoto-shrink_800_800/0/1689358780179?e=1697068800&v=beta&t=dablLgJtciYNQ-2XyozRFQ6Us3DaplyJqw0StW8fKB0",
 };
-export const TITLE: string = "Front-end Developer";
+export const TITLE: string = "Front-End Developer";
 export const DESCRIPTION: string =
   "Javascript developer with knowledge of ReactJS and NestJS frameworks";
 
@@ -81,21 +81,23 @@ export const education: EducationData[] = [
 
 export const feedbacks: FeedbackData[] = [
   {
-    text: " Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor",
+    text: "Juan Camilo automated the tracking of sales in the Department of Large Costumer at EPM, and developed our application for case creation, handling, and tracking.",
     reporter: {
       photoUrl:
-        "https://media.licdn.com/dms/image/D4E03AQH9pn0dGDuAbA/profile-displayphoto-shrink_800_800/0/1689358780179?e=1697068800&v=beta&t=dablLgJtciYNQ-2XyozRFQ6Us3DaplyJqw0StW8fKB0",
-      name: "John Doe",
-      citeUrl: "https://www.citeexample.com",
+        "https://media.licdn.com/dms/image/D4E03AQHBTQ2aub-S9w/profile-displayphoto-shrink_200_200/0/1691003415253?e=1697673600&v=beta&t=HEejkwRjFs6d1_XKgxdhFHCAYQElEPeBopm6nqvlc5k",
+      name: "Ana Isabel Rendon",
+      citeUrl: "https://www.epm.com.co",
+      site: "epm.com.co",
     },
   },
   {
-    text: " Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor",
+    text: "Juan was part of the backend development team for the migration project of our application to NestJS. He did an excellent job as a freelancer.",
     reporter: {
       photoUrl:
-        "https://media.licdn.com/dms/image/D4E03AQH9pn0dGDuAbA/profile-displayphoto-shrink_800_800/0/1689358780179?e=1697068800&v=beta&t=dablLgJtciYNQ-2XyozRFQ6Us3DaplyJqw0StW8fKB0",
-      name: "John Doe",
-      citeUrl: "https://www.citeexample.com",
+        "https://media.licdn.com/dms/image/D4E03AQGdQ6zRrNRcug/profile-displayphoto-shrink_800_800/0/1677857953879?e=1697673600&v=beta&t=jA6aO6a3Za3m-7MurHsad55zMUElkDbaCxUJtydLky8",
+      name: "John Agudelo",
+      citeUrl: "https://www.osgroup.co/",
+      site: "osgroup.co",
     },
   },
 ];
@@ -136,34 +138,30 @@ export const contacts: ContactData[] = [
 export const portfolio: PortfolioData[] = [
   {
     id: 1,
-    title: "Ministry App",
-    description: "Back-end in nest to connect with soap api",
-    card: 1,
-    source: "/",
-    type: TypePortfolio.nest,
+    title: "Ministry Soap Api",
+    description:
+      "Back-end in nest to connect with Transport Ministry Soap Api to cargo registry ",
+    card: 2,
+    source:
+      "https://rndc.mintransporte.gov.co/portals/0/Documentos/MANUAL%20RNDC%20WEB-SERVICE%20v2.3%2020140119.pdf",
+    type: TypePortfolio.backend,
   },
   {
     id: 2,
-    title: "React App",
-    description: "Front-end in nest to connect with soap api",
-    card: 2,
-    source: "/",
-    type: TypePortfolio.react,
+    title: "Best Habits Android App",
+    description:
+      "App developed in Android Studio.  Created to practice mobile development, MVC patterns, Firebase...",
+    card: 1,
+    source:
+      "https://play.google.com/store/apps/details?id=com.k1000.habitchanger&pli=1",
+    type: TypePortfolio.frontend,
   },
   {
     id: 3,
-    title: "Ministry App",
-    description: "Back-end in nest to connect with soap api",
+    title: "CV App",
+    description: "React app builded in typescript",
     card: 1,
     source: "/",
-    type: TypePortfolio.nest,
-  },
-  {
-    id: 4,
-    title: "React App",
-    description: "Front-end in nest to connect with soap api",
-    card: 2,
-    source: "/",
-    type: TypePortfolio.react,
+    type: TypePortfolio.frontend,
   },
 ];

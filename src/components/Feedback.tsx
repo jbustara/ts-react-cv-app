@@ -12,7 +12,7 @@ const Feedback = ({ feedbacks = [] }: props) => {
       {feedbacks.map((feedback) => {
         const {
           text,
-          reporter: { photoUrl, name, citeUrl },
+          reporter: { photoUrl, name, citeUrl, site },
         } = feedback;
         return (
           <li key={nanoid()}>
@@ -22,7 +22,9 @@ const Feedback = ({ feedbacks = [] }: props) => {
                 <img src={photoUrl} alt="user" />
                 <cite>
                   <span>{name}</span>
-                  <a href={citeUrl}>somesite.com</a>
+                  <a href={citeUrl} target="_blank" rel="noreferrer">
+                    {site}
+                  </a>
                 </cite>
               </div>
             </blockquote>
