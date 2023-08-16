@@ -199,7 +199,7 @@ h3 {
 .navigation a:hover {
   color: var(--green);
 }
-.navigation svg {
+.navigation a svg {
   width: 14px;
   height: 14px;
 }

@@ -12,12 +12,12 @@
     align-items: center;
     gap: 20px;
     padding: 18px 20px;
-  }
-  a:hover {
-    color: var(--green);
-  }
-  svg {
-    width: 14px;
-    height: 14px;
+    &:hover {
+      color: var(--green);
+    }
+    svg {
+      width: 14px;
+      height: 14px;
+    }
   }
 }

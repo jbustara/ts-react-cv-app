@@ -45,7 +45,7 @@ const InnerPage = () => {
         </Box>
         <div className="return">
           <Link to="#about" smooth>
-            <FontAwesomeIcon icon="fa-solid fa-chevron-up" />
+            <FontAwesomeIcon icon={["fas", "chevron-up"]} />
           </Link>
         </div>
       </div>
