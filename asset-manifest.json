@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/ts-cv-app/static/css/main.bb12051e.css",
-    "main.js": "/ts-cv-app/static/js/main.24b7767e.js",
-    "static/media/background_home.png": "/ts-cv-app/static/media/background_home.995e8e8458425dea8634.png",
-    "static/media/OpenSans-VariableFont_wdth,wght.ttf": "/ts-cv-app/static/media/OpenSans-VariableFont_wdth,wght.071a1becc7f00e33cc5b.ttf",
-    "static/media/card_2.png": "/ts-cv-app/static/media/card_2.cba85bbdba2ce0efc21c.png",
-    "static/media/card_1.png": "/ts-cv-app/static/media/card_1.8fcd62d2ff4947e3e06d.png",
-    "index.html": "/ts-cv-app/index.html",
-    "main.bb12051e.css.map": "/ts-cv-app/static/css/main.bb12051e.css.map",
-    "main.24b7767e.js.map": "/ts-cv-app/static/js/main.24b7767e.js.map"
+    "main.css": "/static/css/main.18418cc4.css",
+    "main.js": "/static/js/main.d4fc6ebf.js",
+    "static/media/background_home.png": "/static/media/background_home.995e8e8458425dea8634.png",
+    "static/media/OpenSans-VariableFont_wdth,wght.ttf": "/static/media/OpenSans-VariableFont_wdth,wght.071a1becc7f00e33cc5b.ttf",
+    "static/media/card_2.png": "/static/media/card_2.cba85bbdba2ce0efc21c.png",
+    "static/media/card_1.png": "/static/media/card_1.8fcd62d2ff4947e3e06d.png",
+    "index.html": "/index.html",
+    "main.18418cc4.css.map": "/static/css/main.18418cc4.css.map",
+    "main.d4fc6ebf.js.map": "/static/js/main.d4fc6ebf.js.map"
   },
   "entrypoints": [
-    "static/css/main.bb12051e.css",
-    "static/js/main.24b7767e.js"
+    "static/css/main.18418cc4.css",
+    "static/js/main.d4fc6ebf.js"
   ]
 }
