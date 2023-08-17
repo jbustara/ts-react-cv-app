@@ -1,45 +1,71 @@
-import { HashLink as Link } from "react-router-hash-link";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { HashLink } from "react-router-hash-link";
+import useCurrentSection from "../useCurrentSection";
 
 const Navigation = () => {
+  const { currentSection } = useCurrentSection();
+
   return (
     <ul className="navigation">
       <li>
-        <Link to="#about" smooth>
+        <HashLink
+          smooth
+          to="#about"
+          className={currentSection === "about" ? "actived" : ""}
+        >
           <FontAwesomeIcon icon={["fas", "user"]} />
           <span>About me</span>
-        </Link>
+        </HashLink>
       </li>
       <li>
-        <Link to="#education" smooth>
+        <HashLink
+          smooth
+          to="#education"
+          className={currentSection === "education" ? "actived" : ""}
+        >
           <FontAwesomeIcon icon={["fas", "graduation-cap"]} />
           <span>Education</span>
-        </Link>
+        </HashLink>
       </li>
       <li>
-        <Link to="#experience" smooth>
+        <HashLink
+          smooth
+          to="#experience"
+          className={currentSection === "experience" ? "actived" : ""}
+        >
           <FontAwesomeIcon icon={["fas", "pen"]} />
           <span>Experience</span>
-        </Link>
+        </HashLink>
       </li>
       <li>
-        <Link to="#portfolio" smooth>
+        <HashLink
+          smooth
+          to="#portfolio"
+          className={currentSection === "portfolio" ? "actived" : ""}
+        >
           <FontAwesomeIcon icon={["fas", "suitcase"]} />
           <span>Portfolio</span>
-        </Link>
+        </HashLink>
       </li>
       <li>
-        <Link to="#contacts" smooth>
+        <HashLink
+          smooth
+          to="#contacts"
+          className={currentSection === "contacts" ? "actived" : ""}
+        >
           <FontAwesomeIcon icon={["fas", "location-arrow"]} />
           <span>Contacts</span>
-        </Link>
+        </HashLink>
       </li>
       <li>
-        <Link to="#feedback" smooth>
+        <HashLink
+          smooth
+          to="#feedback"
+          className={currentSection === "feedback" ? "actived" : ""}
+        >
           <FontAwesomeIcon icon={["fas", "comment"]} />
           <span>Feedback</span>
-        </Link>
+        </HashLink>
       </li>
     </ul>
   );

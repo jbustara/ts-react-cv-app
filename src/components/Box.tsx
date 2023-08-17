@@ -6,10 +6,10 @@ interface props {
 
 const Box = ({ title, children, id }: props) => {
   return (
-    <div className="info-box" id={id}>
+    <section className="info-box" id={id}>
       <h2>{title}</h2>
       <div className="info-box__content">{children}</div>
-    </div>
+    </section>
   );
 };
 

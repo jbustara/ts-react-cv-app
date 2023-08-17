@@ -1,4 +1,3 @@
-import React from "react";
 import Panel from "../../components/Panel";
 import Box from "../../components/Box";
 import Expertise from "../../components/Expertise";
@@ -15,7 +14,7 @@ import {
   portfolio,
 } from "../../constants";
 import useVisibility from "../../useVisibility";
-import { HashLink as Link } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const InnerPage = () => {
@@ -44,9 +43,9 @@ const InnerPage = () => {
           <Feedback feedbacks={feedbacks} />
         </Box>
         <div className="return">
-          <Link to="#about" smooth>
+          <HashLink smooth to="#">
             <FontAwesomeIcon icon={["fas", "chevron-up"]} />
-          </Link>
+          </HashLink>
         </div>
       </div>
     </div>

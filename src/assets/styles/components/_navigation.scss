@@ -3,6 +3,9 @@
   font-size: 16px;
   width: 260px;
   flex-wrap: nowrap;
+  .actived {
+    color: var(--green);
+  }
   a {
     text-decoration: none;
     color: var(--gray-letter-color);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import Isotope from "isotope-layout";
 
 import card1 from "../assets/images/card_1.png";
@@ -10,21 +10,20 @@ interface props {
 }
 
 const Portfolio = ({ portfolio = [] }: props) => {
-  const [isotope, setIsotope] = useState<Isotope | null>();
+  const isotope = useRef<Isotope | null>();
   useEffect(() => {
-    setIsotope(
-      new Isotope(".filter-container", {
-        itemSelector: ".filter-item",
-        layoutMode: "fitRows",
-      })
-    );
+    isotope.current = new Isotope(".filter-container", {
+      itemSelector: ".filter-item",
+      layoutMode: "fitRows",
+    });
+    return () => isotope.current?.destroy();
   }, []);
 
   const handleFilter = (key: string) => {
     if (key === "*") {
-      isotope?.arrange({ filter: "*" });
+      isotope.current?.arrange({ filter: "*" });
     } else {
-      isotope?.arrange({ filter: `.${key}` });
+      isotope.current?.arrange({ filter: `.${key}` });
     }
   };
 
