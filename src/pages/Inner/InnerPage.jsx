@@ -16,10 +16,23 @@ import {
 import useVisibility from "../../useVisibility";
 import { HashLink } from "react-router-hash-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from "react";
 
 const InnerPage = () => {
   const { visibility, toggleVisibility } = useVisibility();
-
+  useEffect(() => {
+    const fechtData = async () => {
+      try {
+        const response = await fetch("/api/educations");
+        console.log("response", response);
+        const data = await response.json();
+        console.log("data", data);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    fechtData();
+  }, []);
   return (
     <div className="inner-page">
       <Panel visibility={visibility} toggleVisibility={toggleVisibility} />
