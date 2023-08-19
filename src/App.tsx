@@ -12,6 +12,7 @@ import {
   faEnvelope,
   faChevronLeft,
   faChevronUp,
+  faRotate,
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -29,7 +30,8 @@ library.add(
   faEnvelope,
   faLinkedin,
   faGithub,
-  faChevronUp
+  faChevronUp,
+  faRotate
 );
 
 function App() {

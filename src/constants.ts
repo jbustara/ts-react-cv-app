@@ -8,6 +8,9 @@ import {
   EducationData,
 } from "./types";
 
+export const ERROR_FETCH_EDUCATION =
+  '"Something went wrong; please review your server connection!';
+
 export const profile: ProfileData = {
   name: "Juan Camilo Bustamante",
   avatar:

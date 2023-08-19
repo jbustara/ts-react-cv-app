@@ -7,6 +7,8 @@ import HomePage from "./pages/Home/HomePage";
 import InnerPage from "./pages/Inner/InnerPage";
 
 import "./index.css";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
 server();
 const router = createBrowserRouter([
@@ -30,7 +32,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </Provider>
 );

@@ -52,3 +52,14 @@ export interface EducationData {
   text: string;
 }
 export type cardType = 1 | 2;
+
+export enum Status {
+  loading = "Loading",
+  done = "Pending",
+  error = "Error",
+}
+
+export interface SkillData {
+  name: string;
+  range: number;
+}

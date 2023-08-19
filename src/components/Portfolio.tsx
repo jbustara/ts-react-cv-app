@@ -4,6 +4,7 @@ import Isotope from "isotope-layout";
 import card1 from "../assets/images/card_1.png";
 import card2 from "../assets/images/card_2.png";
 import { PortfolioData, TypePortfolio } from "../types";
+import PortfolioInfo from "./PortfolioInfo";
 
 interface props {
   portfolio: PortfolioData[];
@@ -44,13 +45,11 @@ const Portfolio = ({ portfolio = [] }: props) => {
           return (
             <li className={`filter-item ${type}`} key={id}>
               <img src={card === 1 ? card1 : card2} alt="card" />
-              <div className="portfolio-info">
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <a href={source} target="_blank" rel="noreferrer">
-                  View resource
-                </a>
-              </div>
+              <PortfolioInfo
+                description={description}
+                title={title}
+                source={source}
+              />
             </li>
           );
         })}

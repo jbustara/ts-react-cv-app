@@ -1,3 +1,12 @@
+import { useEffect } from "react";
+import { fetchEducation } from "../../features/education/educationSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+
+import { HashLink } from "react-router-hash-link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import useVisibility from "../../useVisibility";
+
 import Panel from "../../components/Panel";
 import Box from "../../components/Box";
 import Expertise from "../../components/Expertise";
@@ -6,33 +15,30 @@ import Timeline from "../../components/Timeline";
 import Address from "../../components/Address";
 import Portfolio from "../../components/Portfolio";
 import {
+  ERROR_FETCH_EDUCATION,
   aboutMe,
   contacts,
-  education,
   experiences,
   feedbacks,
   portfolio,
 } from "../../constants";
-import useVisibility from "../../useVisibility";
-import { HashLink } from "react-router-hash-link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect } from "react";
+import { Status } from "../../types";
+import SkillsForm from "../../components/SkillsForm";
+import Skills from "../../components/Skills";
+import { fetchSkills } from "../../features/skills/skillsSlice";
 
 const InnerPage = () => {
   const { visibility, toggleVisibility } = useVisibility();
+  const education = useAppSelector((state) => state.educations.educations);
+  const status = useAppSelector((state) => state.educations.status);
+  const skills = useAppSelector((state) => state.skills.skills);
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
-    const fechtData = async () => {
-      try {
-        const response = await fetch("/api/educations");
-        console.log("response", response);
-        const data = await response.json();
-        console.log("data", data);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    fechtData();
-  }, []);
+    dispatch(fetchEducation());
+    dispatch(fetchSkills());
+  }, [dispatch]);
+
   return (
     <div className="inner-page">
       <Panel visibility={visibility} toggleVisibility={toggleVisibility} />
@@ -41,7 +47,19 @@ const InnerPage = () => {
           <p>{aboutMe}</p>
         </Box>
         <Box title="Education" id="education">
-          <Timeline education={education} />
+          {status === Status.done ? (
+            <Timeline education={education} />
+          ) : status === Status.loading ? (
+            <div className="loading">
+              <FontAwesomeIcon icon={["fas", "rotate"]} spin />
+            </div>
+          ) : (
+            <div className="error-fetch">{ERROR_FETCH_EDUCATION}</div>
+          )}
+        </Box>
+        <Box title="Skills" id="skills">
+          <SkillsForm />
+          <Skills skills={skills} />
         </Box>
         <Box title="Experience" id="experience">
           <Expertise experiences={experiences} />
