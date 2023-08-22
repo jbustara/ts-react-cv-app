@@ -84,7 +84,6 @@ h3 {
 }
 .info-box .info-box__content {
   position: relative;
-  width: 100%;
 }
 .info-box .info-box__content .loading svg {
   position: absolute;
@@ -379,14 +378,98 @@ h3 {
   z-index: -1;
 }
 
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.skills-container .skill-range {
+  padding: 10px 0 10px 10px;
+  color: white;
+  background-color: var(--green);
+}
+.skills-container .skill-axe {
+  position: relative;
+}
+.skills-container .skill-axe .beginner {
+  position: absolute;
+  left: 0;
+}
+.skills-container .skill-axe .proficient {
+  position: absolute;
+  left: 33.3%;
+  transform: translateX(-50%);
+}
+.skills-container .skill-axe .expert {
+  position: absolute;
+  left: 66.6%;
+  transform: translateX(-50%);
+}
+.skills-container .skill-axe .master {
+  position: absolute;
+  right: 0;
+}
+.skills-container .skill-axe-line {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid var(--main-color);
+  border-right: 1px solid var(--main-color);
+}
+.skills-container .skill-axe-line div {
+  height: 10px;
+  width: 33.3%;
+  border-left: 1px solid var(--main-color);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 220px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid var(--green);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 20px;
+}
+.form .form-btn {
+  margin-top: 10px;
+  text-transform: capitalize;
+  background: var(--main-color);
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+.form .form-btn:hover {
+  background: var(--green);
+}
+.form .form-input {
+  margin-top: 10px;
+  width: 370px;
+  height: 40px;
+}
+.form .form-input input {
+  margin-left: 10px;
+  padding-left: 5px;
+  height: 40px;
+  width: 270px;
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+}
+.form .form-input span {
+  color: red;
+  font-size: 10px;
+}
+
 .home-page {
   background-image: url("./assets/images/background_home.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   height: 100vh;
-  width: 80vw;
-  margin: 0 auto;
   flex-direction: column;
   align-items: center;
   padding-top: 30vh;
@@ -412,9 +495,6 @@ h3 {
 .inner-page {
   display: flex;
   flex-direction: row;
-  height: 100vh;
-  width: 80vw;
-  margin: 0 auto;
 }
 .inner-page .content {
   display: flex;
@@ -439,6 +519,14 @@ h3 {
 }
 .inner-page .content .return:hover {
   background: var(--green);
+}
+.inner-page .skill-box {
+  position: relative;
+}
+.inner-page .skill-box .button {
+  position: absolute;
+  top: 70px;
+  right: 0;
 }
 .inner-page .wide {
   margin-left: 60px;

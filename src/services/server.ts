@@ -1,5 +1,5 @@
 import { createServer, Response } from "miragejs";
-import db from "./db.json";
+import { education, skills } from "./db";
 
 export default function makeServer() {
   return createServer({
@@ -9,18 +9,17 @@ export default function makeServer() {
       this.get(
         "/educations",
         () => {
-          return db.education;
+          return education;
         },
         { timing: 3000 }
       );
 
       this.get("/skills", () => {
-        return db.skills;
+        return skills;
       });
 
       this.post("/skills", (schema, request) => {
-        db.skills.push(JSON.parse(request.requestBody));
-        console.log("db", db);
+        skills.push(JSON.parse(request.requestBody));
         return new Response(200, {}, { success: "ok" }); //args: statusCode, headers, data
       });
     },

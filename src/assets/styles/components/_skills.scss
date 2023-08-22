@@ -1,0 +1,42 @@
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  .skill-range {
+    padding: 10px 0 10px 10px;
+    color: white;
+    background-color: var(--green);
+  }
+  .skill-axe {
+    position: relative;
+    .beginner {
+      position: absolute;
+      left: 0;
+    }
+    .proficient {
+      position: absolute;
+      left: 33.3%;
+      transform: translateX(-50%);
+    }
+    .expert {
+      position: absolute;
+      left: 66.6%;
+      transform: translateX(-50%);
+    }
+    .master {
+      position: absolute;
+      right: 0;
+    }
+  }
+  .skill-axe-line {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid var(--main-color);
+    border-right: 1px solid var(--main-color);
+    div {
+      height: 10px;
+      width: 33.3%;
+      border-left: 1px solid var(--main-color);
+    }
+  }
+}

@@ -16,6 +16,7 @@ import Address from "../../components/Address";
 import Portfolio from "../../components/Portfolio";
 import {
   ERROR_FETCH_EDUCATION,
+  TEXT_EDIT_FORM,
   aboutMe,
   contacts,
   experiences,
@@ -25,13 +26,16 @@ import {
 import { Status } from "../../types";
 import SkillsForm from "../../components/SkillsForm";
 import Skills from "../../components/Skills";
-import { fetchSkills } from "../../features/skills/skillsSlice";
+import { fetchSkills, openSkills } from "../../features/skills/skillsSlice";
+import Button from "../../components/Button";
 
 const InnerPage = () => {
   const { visibility, toggleVisibility } = useVisibility();
+
   const education = useAppSelector((state) => state.educations.educations);
   const status = useAppSelector((state) => state.educations.status);
   const skills = useAppSelector((state) => state.skills.skills);
+  const skillsIsOpen = useAppSelector((state) => state.skills.skillsIsOpen);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -57,10 +61,17 @@ const InnerPage = () => {
             <div className="error-fetch">{ERROR_FETCH_EDUCATION}</div>
           )}
         </Box>
-        <Box title="Skills" id="skills">
-          <SkillsForm />
-          <Skills skills={skills} />
-        </Box>
+        <div className="skill-box">
+          <Box title="Skills" id="skills">
+            {skillsIsOpen ? <SkillsForm /> : <></>}
+            <Skills skills={skills} />
+          </Box>
+          <Button
+            icon={["fas", "pen-to-square"]}
+            text={TEXT_EDIT_FORM}
+            onClick={() => dispatch(openSkills())}
+          />
+        </div>
         <Box title="Experience" id="experience">
           <Expertise experiences={experiences} />
         </Box>

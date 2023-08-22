@@ -1,14 +1,10 @@
 .inner-page {
   display: flex;
   flex-direction: row;
-  height: 100vh;
-  width: 80vw;
-  margin: 0 auto;
   .content {
     display: flex;
     flex-direction: column;
     margin-left: 310px;
-
     .return {
       align-self: flex-end;
       display: flex;
@@ -27,6 +23,14 @@
       &:hover {
         background: var(--green);
       }
+    }
+  }
+  .skill-box {
+    position: relative;
+    .button {
+      position: absolute;
+      top: 70px;
+      right: 0;
     }
   }
   .wide {

@@ -9,6 +9,7 @@ interface props {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 const Button = ({ icon, text, onClick }: props) => {
+  console.log("onClick");
   return (
     <button className="button" onClick={onClick}>
       {icon && <FontAwesomeIcon icon={icon} />}
