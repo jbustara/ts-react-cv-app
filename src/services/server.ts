@@ -1,5 +1,8 @@
 import { createServer, Response } from "miragejs";
-import { education, skills } from "./db";
+import { education } from "./db";
+import { SkillData } from "../types";
+
+let skills: SkillData[] = [];
 
 export default function makeServer() {
   return createServer({
@@ -20,6 +23,12 @@ export default function makeServer() {
 
       this.post("/skills", (schema, request) => {
         skills.push(JSON.parse(request.requestBody));
+        return new Response(200, {}, { success: "ok" }); //args: statusCode, headers, data
+      });
+
+      this.post("/skills/all", (schema, request) => {
+        skills = JSON.parse(request.requestBody);
+        console.log("skillsService", skills);
         return new Response(200, {}, { success: "ok" }); //args: statusCode, headers, data
       });
     },

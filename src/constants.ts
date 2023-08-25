@@ -5,7 +5,6 @@ import {
   TypePortfolio,
   PortfolioData,
   ProfileData,
-  EducationData,
 } from "./types";
 
 export const PLACEHOLDER_FORM_NAME = "Enter skill name";
@@ -59,29 +58,6 @@ export const experiences: ExperienceData[] = [
       description:
         "Automate sales processes with UiPath, Power Automate and Visual Basic for Excel.",
     },
-  },
-];
-
-export const education: EducationData[] = [
-  {
-    date: 2023,
-    title: "Introduction to JavaScript Development",
-    text: "EPAM",
-  },
-  {
-    date: 2022,
-    title: "Full-stack Developer Certificate Program",
-    text: "OIT",
-  },
-  {
-    date: 2005,
-    title: "Marketing Specialist",
-    text: "Eafit University",
-  },
-  {
-    date: 2002,
-    title: "Electronic Enginer",
-    text: "University of Antioquia ",
   },
 ];
 

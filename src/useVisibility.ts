@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const useVisibility = () => {
-  const [visibility, setVisibility] = useState(true);
+  const [visibility, setVisibility] = useState<boolean>(true);
   const toggleVisibility = () => {
     setVisibility(!visibility);
   };

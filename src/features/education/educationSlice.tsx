@@ -22,6 +22,7 @@ export const educationSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchEducation.fulfilled, (state, { payload }) => {
+        console.log("fetching");
         state.educations = payload;
         state.status = Status.done;
       })

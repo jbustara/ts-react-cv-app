@@ -6,7 +6,7 @@ import { profile } from "../constants";
 import { useNavigate } from "react-router-dom";
 
 interface props {
-  visibility: any;
+  visibility: boolean;
   toggleVisibility: React.MouseEventHandler;
 }
 

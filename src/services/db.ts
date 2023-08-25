@@ -1,5 +1,3 @@
-import { SkillData } from "../types";
-
 export const education = [
   {
     date: 2023,
@@ -19,8 +17,6 @@ export const education = [
   {
     date: 2002,
     title: "Electronic Enginer",
-    text: "University of Antioquia ",
+    text: "University of Antioquia",
   },
 ];
-
-export const skills: SkillData[] = [];

@@ -63,7 +63,7 @@ const InnerPage = () => {
         </Box>
         <div className="skill-box">
           <Box title="Skills" id="skills">
-            {skillsIsOpen ? <SkillsForm /> : <></>}
+            <>{skillsIsOpen && <SkillsForm />}</>
             <Skills skills={skills} />
           </Box>
           <Button
