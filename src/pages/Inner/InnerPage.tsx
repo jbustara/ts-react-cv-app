@@ -7,13 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import useVisibility from "../../useVisibility";
 
-import Panel from "../../components/Panel";
-import Box from "../../components/Box";
-import Expertise from "../../components/Expertise";
-import Feedback from "../../components/Feedback";
-import Timeline from "../../components/Timeline";
-import Address from "../../components/Address";
-import Portfolio from "../../components/Portfolio";
+import Panel from "../../components/Panel/Panel";
+import Box from "../../components/Box/Box";
+import Expertise from "../../components/Expertise/Expertise";
+import Feedback from "../../components/Feedback/Feedback";
+import Timeline from "../../components/Timeline/Timeline";
+import Address from "../../components/Address/Address";
+import Portfolio from "../../components/Portfolio/Portfolio";
 import {
   ERROR_FETCH_EDUCATION,
   TEXT_EDIT_FORM,
@@ -24,10 +24,10 @@ import {
   portfolio,
 } from "../../constants";
 import { Status } from "../../types";
-import SkillsForm from "../../components/SkillsForm";
-import Skills from "../../components/Skills";
+import SkillsForm from "../../components/Skills/SkillsForm";
+import Skills from "../../components/Skills/Skills";
 import { fetchSkills, openSkills } from "../../features/skills/skillsSlice";
-import Button from "../../components/Button";
+import Button from "../../components/Button/Button";
 
 const InnerPage = () => {
   const { visibility, toggleVisibility } = useVisibility();
@@ -61,8 +61,8 @@ const InnerPage = () => {
             <div className="error-fetch">{ERROR_FETCH_EDUCATION}</div>
           )}
         </Box>
-        <div className="skill-box">
-          <Box title="Skills" id="skills">
+        <section className="skill-box" id="skills">
+          <Box title="Skills" id="">
             <>{skillsIsOpen && <SkillsForm />}</>
             <Skills skills={skills} />
           </Box>
@@ -71,7 +71,7 @@ const InnerPage = () => {
             text={TEXT_EDIT_FORM}
             onClick={() => dispatch(openSkills())}
           />
-        </div>
+        </section>
         <Box title="Experience" id="experience">
           <Expertise experiences={experiences} />
         </Box>

@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import Isotope from "isotope-layout";
 
-import card1 from "../assets/images/card_1.png";
-import card2 from "../assets/images/card_2.png";
-import { PortfolioData, TypePortfolio } from "../types";
+import card1 from "../../assets/images/card_1.png";
+import card2 from "../../assets/images/card_2.png";
+import { PortfolioData, TypePortfolio } from "../../types";
 import PortfolioInfo from "./PortfolioInfo";
 
 interface props {

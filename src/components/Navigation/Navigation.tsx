@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { HashLink } from "react-router-hash-link";
-import useCurrentSection from "../useCurrentSection";
+import useCurrentSection from "../../useCurrentSection";
 
 const Navigation = () => {
   const { currentSection } = useCurrentSection();
@@ -25,6 +25,16 @@ const Navigation = () => {
         >
           <FontAwesomeIcon icon={["fas", "graduation-cap"]} />
           <span>Education</span>
+        </HashLink>
+      </li>
+      <li>
+        <HashLink
+          smooth
+          to="#skills"
+          className={currentSection === "skills" ? "actived" : ""}
+        >
+          <FontAwesomeIcon icon={["fas", "gem"]} />
+          <span>Skills</span>
         </HashLink>
       </li>
       <li>

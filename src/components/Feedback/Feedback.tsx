@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
-import Info from "./Info";
-import { FeedbackData } from "../types";
+import Info from "../Info/Info";
+import { FeedbackData } from "../../types";
 
 interface props {
   feedbacks: FeedbackData[];

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ContactData } from "../types";
+import { ContactData } from "../../types";
 
 interface props {
   contacts: ContactData[];

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Navigation from "./Navigation";
+import Panel from "./Panel";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import {
   faUser,
@@ -8,6 +8,9 @@ import {
   faSuitcase,
   faLocationArrow,
   faComment,
+  faBars,
+  faChevronLeft,
+  faGem,
 } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
@@ -17,16 +20,18 @@ library.add(
   faSuitcase,
   faLocationArrow,
   faComment,
-  faGraduationCap
+  faGraduationCap,
+  faBars,
+  faChevronLeft,
+  faGem
 );
-describe("Navigation component", () => {
-  it("Renders Navigation component", () => {
-    //Mocking route to rendering App (Subscribe inside)
+describe("Panel component", () => {
+  it("Renders Panel component", () => {
     const router = createMemoryRouter(
       [
         {
           path: "/",
-          element: <Navigation />,
+          element: <Panel visibility={true} toggleVisibility={() => false} />,
         },
       ],
       {
@@ -36,9 +41,9 @@ describe("Navigation component", () => {
     );
     const { container } = render(<RouterProvider router={router} />);
 
-    //renders 6 links and 6 svg
-    expect(screen.getAllByRole("link").length).toBe(6);
+    //renders 7 links and 8 svg (7 of the panel, + burger icon, + button back)
+    expect(screen.getAllByRole("link").length).toBe(7);
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    expect(container.querySelectorAll("svg").length).toBe(6);
+    expect(container.querySelectorAll("svg").length).toBe(9);
   });
 });

@@ -65,11 +65,9 @@ export const skillsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchSkills.fulfilled, (state, { payload }) => {
-        console.log("payloadGet", payload);
         state.skills = payload;
       })
       .addCase(postSkills.fulfilled, (state, { payload }) => {
-        console.log("payloadPost", payload);
         state.skills.push(payload);
       });
   },

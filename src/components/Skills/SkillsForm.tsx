@@ -1,8 +1,8 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { initialValues, validationForm } from "./skillFormUtil";
-import { PLACEHOLDER_FORM_NAME, PLACEHOLDER_FORM_RANGE } from "../constants";
-import { useAppDispatch } from "../app/hooks";
-import { fetchSkills, postSkills } from "../features/skills/skillsSlice";
+import { PLACEHOLDER_FORM_NAME, PLACEHOLDER_FORM_RANGE } from "../../constants";
+import { useAppDispatch } from "../../app/hooks";
+import { fetchSkills, postSkills } from "../../features/skills/skillsSlice";
 
 const SkillsForm = () => {
   const dispatch = useAppDispatch();
@@ -21,7 +21,7 @@ const SkillsForm = () => {
         resetForm();
       }}
     >
-      {({ dirty, errors }) => (
+      {({ dirty }) => (
         <Form className="form">
           <div className="form-input">
             <label htmlFor="name">

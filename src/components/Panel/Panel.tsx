@@ -1,8 +1,8 @@
-import PhotoBox from "./PhotoBox";
-import Navigation from "./Navigation";
-import Button from "./Button";
+import PhotoBox from "../PhotoBox/PhotoBox";
+import Navigation from "../Navigation/Navigation";
+import Button from "../Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { profile } from "../constants";
+import { profile } from "../../constants";
 import { useNavigate } from "react-router-dom";
 
 interface props {

@@ -22,7 +22,6 @@ export const educationSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchEducation.fulfilled, (state, { payload }) => {
-        console.log("fetching");
         state.educations = payload;
         state.status = Status.done;
       })
@@ -30,7 +29,6 @@ export const educationSlice = createSlice({
         state.status = Status.loading;
       })
       .addCase(fetchEducation.rejected, (state) => {
-        console.log("error", state);
         state.status = Status.error;
       });
   },

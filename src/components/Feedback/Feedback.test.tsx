@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Feedback from "./Feedback";
-import { feedbacks } from "../constants";
+import { feedbacks } from "../../constants";
 
 jest.mock("nanoid", () => {
   return { nanoid: () => Math.random() };

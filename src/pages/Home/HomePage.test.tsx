@@ -1,9 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import HomePage from "./pages/Home/HomePage";
-import InnerPage from "./pages/Inner/InnerPage";
+import HomePage from "./HomePage";
+import InnerPage from "../Inner/InnerPage";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
-import { store } from "./app/store";
+import { store } from "../../app/store";
 import {
   faUser,
   faPen,
@@ -22,8 +23,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { education } from "./services/db";
-import App from "./App";
 
 library.add(
   faUser,
@@ -43,34 +42,46 @@ library.add(
   faPenToSquare,
   faGem
 );
-//mocking nanoid
 jest.mock("nanoid", () => {
   return { nanoid: () => Math.random() };
 });
 
-//mocking Fetch
-beforeEach(() => {
-  fetchMock.resetMocks();
-});
-
-describe("App component", () => {
-  it("Renders HomePage component", async () => {
+describe("Home Page", () => {
+  it("Renders HomePage component", () => {
     //Mocking route to rendering App (Subscribe inside)
     const router = createMemoryRouter(
       [
         {
           path: "/",
-          element: <App />,
-          children: [
-            {
-              path: "/",
-              element: <HomePage />,
-            },
-            {
-              path: "/inner",
-              element: <InnerPage />,
-            },
-          ],
+          element: <HomePage />,
+        },
+      ],
+      {
+        initialEntries: ["/"],
+        initialIndex: 0,
+      }
+    );
+    render(<RouterProvider router={router} />);
+
+    expect(screen.getByText("Juan Camilo Bustamante")).toBeInTheDocument();
+    expect(screen.getByText("Front-End Developer")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Know more" })
+    ).toBeInTheDocument();
+  });
+
+  it("Navigate to InnerPage when user click the button", async () => {
+    const user = userEvent.setup();
+    //Mocking route to rendering App (Subscribe inside)
+    const router = createMemoryRouter(
+      [
+        {
+          path: "/",
+          element: <HomePage />,
+        },
+        {
+          path: "/inner",
+          element: <InnerPage />,
         },
       ],
       {
@@ -84,10 +95,8 @@ describe("App component", () => {
         <RouterProvider router={router} />
       </Provider>
     );
-    expect(screen.getByText("Juan Camilo Bustamante")).toBeInTheDocument();
-    expect(screen.getByText("Front-End Developer")).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: "Know more" })
-    ).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "Know more" }));
+    expect(screen.getAllByText("Skills").length).toBe(2);
   });
 });

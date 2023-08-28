@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import Button from "../../components/Button";
-import PhotoBox from "../../components/PhotoBox";
+import Button from "../../components/Button/Button";
+import PhotoBox from "../../components/PhotoBox/PhotoBox";
 import { profile, TITLE, DESCRIPTION } from "../../constants";
 
 const HomePage = () => {

@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
-import Info from "./Info";
-import { EducationData } from "../types";
+import Info from "../Info/Info";
+import { EducationData } from "../../types";
 
 interface props {
   education: EducationData[];

@@ -14,6 +14,7 @@ import {
   faChevronUp,
   faRotate,
   faPenToSquare,
+  faGem,
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -33,7 +34,8 @@ library.add(
   faGithub,
   faChevronUp,
   faRotate,
-  faPenToSquare
+  faPenToSquare,
+  faGem
 );
 
 function App() {

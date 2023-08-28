@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Timeline from "./Timeline";
-import { education } from "../services/db";
+import { education } from "../../services/db";
 
 jest.mock("nanoid", () => {
   return { nanoid: () => Math.random() };
