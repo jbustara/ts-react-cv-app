@@ -7,16 +7,11 @@ const useCurrentSection = () => {
     const sections = document.querySelectorAll("section");
 
     const navHighlighter = () => {
-      let actualPosition = window.scrollY;
+      let actualPosition = window.scrollY + 100;
 
       sections.forEach((section) => {
         const sectionStart = section.offsetTop;
         const sectionEnd = sectionStart + section.offsetHeight;
-        console.dir(section);
-        console.log("heigh", section.offsetHeight);
-        console.log("Parent", section.offsetParent);
-        console.log("top", section.offsetTop);
-        console.log("id", section.id);
         if (actualPosition > sectionStart && actualPosition < sectionEnd) {
           if (currentSection !== section.id) {
             setCurrentSection(section.id);
