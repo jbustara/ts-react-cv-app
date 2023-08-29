@@ -28,7 +28,6 @@ export default function makeServer() {
 
       this.post("/skills/all", (schema, request) => {
         skills = JSON.parse(request.requestBody);
-        console.log("skillsService", skills);
         return new Response(200, {}, { success: "ok" }); //args: statusCode, headers, data
       });
     },

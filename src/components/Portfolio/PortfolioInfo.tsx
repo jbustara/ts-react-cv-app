@@ -1,3 +1,5 @@
+import { LINK_INFO_PORTFOLIO } from "../../constants";
+
 interface props {
   title: string;
   description: string;
@@ -9,7 +11,7 @@ const PortfolioInfo = ({ title, description, source }: props) => {
       <h3>{title}</h3>
       <p>{description}</p>
       <a href={source} target="_blank" rel="noreferrer">
-        View resource
+        {LINK_INFO_PORTFOLIO}
       </a>
     </div>
   );

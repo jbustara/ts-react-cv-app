@@ -1,16 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import PhotoBox from "../../components/PhotoBox/PhotoBox";
-import { profile, TITLE, DESCRIPTION } from "../../constants";
+import { PROFILE, TITLE, DESCRIPTION } from "../../cv-data";
+import { BUTTON_HOME_PAGE_TEXT } from "../../constants";
 
 const HomePage = () => {
   const navigate = useNavigate();
   return (
     <div className="home-page">
-      <PhotoBox {...profile} />
+      <PhotoBox {...PROFILE} />
       <header>{TITLE}</header>
       <p>{DESCRIPTION}</p>
-      <Button text="Know more" onClick={() => navigate("/inner")} />
+      <Button text={BUTTON_HOME_PAGE_TEXT} onClick={() => navigate("/inner")} />
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import Address from "./Address";
-import { contacts } from "../../constants";
+import { contacts } from "../../cv-data";
 library.add(faPhone, faEnvelope, faLinkedin, faGithub);
 
 describe("Address component", () => {

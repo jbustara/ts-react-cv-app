@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import { SkillData } from "../../types";
+import { SKILLS_AXES_NAMES } from "../../constants";
 
 interface props {
   skills: SkillData[];
@@ -25,10 +26,10 @@ const Skills = ({ skills = [] }: props) => {
         <div></div>
       </div>
       <div className="skill-axe">
-        <span className="beginner">Begginer</span>
-        <span className="proficient">Proficient</span>
-        <span className="expert">Expert</span>
-        <span className="master">Master</span>
+        <span className="beginner">{SKILLS_AXES_NAMES.Begginer}</span>
+        <span className="proficient">{SKILLS_AXES_NAMES.Proficient}</span>
+        <span className="expert">{SKILLS_AXES_NAMES.Expert}</span>
+        <span className="master">{SKILLS_AXES_NAMES.Master}</span>
       </div>
     </div>
   );

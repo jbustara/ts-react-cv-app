@@ -2,8 +2,9 @@ import PhotoBox from "../PhotoBox/PhotoBox";
 import Navigation from "../Navigation/Navigation";
 import Button from "../Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { profile } from "../../constants";
+import { PROFILE } from "../../cv-data";
 import { useNavigate } from "react-router-dom";
+import { BUTTON_PANEL_TEXT } from "../../constants";
 
 interface props {
   visibility: boolean;
@@ -17,12 +18,12 @@ const Panel = ({ visibility, toggleVisibility }: props) => {
       {visibility && (
         <div className="panel-navigation">
           <div>
-            <PhotoBox {...profile} />
+            <PhotoBox {...PROFILE} />
             <Navigation />
           </div>
 
           <Button
-            text="Go back"
+            text={BUTTON_PANEL_TEXT}
             icon={["fas", "chevron-left"]}
             onClick={() => navigate("/")}
           />

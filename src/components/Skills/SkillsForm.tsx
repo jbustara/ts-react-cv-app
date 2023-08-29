@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { initialValues, validationForm } from "./skillFormUtil";
-import { PLACEHOLDER_FORM_NAME, PLACEHOLDER_FORM_RANGE } from "../../constants";
+import { FORM_VALUES } from "../../constants";
 import { useAppDispatch } from "../../app/hooks";
 import { fetchSkills, postSkills } from "../../features/skills/skillsSlice";
 
@@ -25,30 +25,30 @@ const SkillsForm = () => {
         <Form className="form">
           <div className="form-input">
             <label htmlFor="name">
-              Skill name
+              {FORM_VALUES.NameLabel}
               <Field
                 type="text"
                 name="name"
                 id="name"
-                placeholder={PLACEHOLDER_FORM_NAME}
+                placeholder={FORM_VALUES.NamePlaceholder}
               />
             </label>
             <ErrorMessage name="name" component="span" />
           </div>
           <div className="form-input">
             <label htmlFor="range">
-              Skill range
+              {FORM_VALUES.RangeLabel}
               <Field
                 type="number"
                 name="range"
                 id="range"
-                placeholder={PLACEHOLDER_FORM_RANGE}
+                placeholder={FORM_VALUES.RangePlaceholder}
               />
             </label>
             <ErrorMessage name="range" component="span" />
           </div>
           <button type="submit" disabled={!dirty} className="form-btn">
-            Add skill
+            {FORM_VALUES.ButtonSubmitFormName}
           </button>
         </Form>
       )}

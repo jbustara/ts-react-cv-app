@@ -23,6 +23,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { PROFILE, TITLE } from "../../cv-data";
+import { BUTTON_HOME_PAGE_TEXT } from "../../constants";
 
 library.add(
   faUser,
@@ -63,10 +65,10 @@ describe("Home Page", () => {
     );
     render(<RouterProvider router={router} />);
 
-    expect(screen.getByText("Juan Camilo Bustamante")).toBeInTheDocument();
-    expect(screen.getByText("Front-End Developer")).toBeInTheDocument();
+    expect(screen.getByText(PROFILE.name)).toBeInTheDocument();
+    expect(screen.getByText(TITLE)).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: "Know more" })
+      screen.getByRole("button", { name: BUTTON_HOME_PAGE_TEXT })
     ).toBeInTheDocument();
   });
 
@@ -96,7 +98,9 @@ describe("Home Page", () => {
       </Provider>
     );
 
-    await user.click(screen.getByRole("button", { name: "Know more" }));
+    await user.click(
+      screen.getByRole("button", { name: BUTTON_HOME_PAGE_TEXT })
+    );
     expect(screen.getAllByText("Skills").length).toBe(2);
   });
 });

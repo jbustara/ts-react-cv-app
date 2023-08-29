@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { HashLink } from "react-router-hash-link";
 import useCurrentSection from "../../useCurrentSection";
+import { SECTIONS } from "../../constants";
 
 const Navigation = () => {
   const { currentSection } = useCurrentSection();
@@ -10,71 +11,71 @@ const Navigation = () => {
       <li>
         <HashLink
           smooth
-          to="#about"
-          className={currentSection === "about" ? "actived" : ""}
+          to={`#${SECTIONS.AboutId}`}
+          className={currentSection === SECTIONS.AboutId ? "actived" : ""}
         >
           <FontAwesomeIcon icon={["fas", "user"]} />
-          <span>About me</span>
+          <span>{SECTIONS.AboutName}</span>
         </HashLink>
       </li>
       <li>
         <HashLink
           smooth
-          to="#education"
-          className={currentSection === "education" ? "actived" : ""}
+          to={`#${SECTIONS.Education}`}
+          className={currentSection === SECTIONS.Education ? "actived" : ""}
         >
           <FontAwesomeIcon icon={["fas", "graduation-cap"]} />
-          <span>Education</span>
+          <span>{SECTIONS.Education}</span>
         </HashLink>
       </li>
       <li>
         <HashLink
           smooth
-          to="#skills"
-          className={currentSection === "skills" ? "actived" : ""}
+          to={`#${SECTIONS.Skills}`}
+          className={currentSection === SECTIONS.Skills ? "actived" : ""}
         >
           <FontAwesomeIcon icon={["fas", "gem"]} />
-          <span>Skills</span>
+          <span>{SECTIONS.Skills}</span>
         </HashLink>
       </li>
       <li>
         <HashLink
           smooth
-          to="#experience"
-          className={currentSection === "experience" ? "actived" : ""}
+          to={`#${SECTIONS.Experience}`}
+          className={currentSection === SECTIONS.Experience ? "actived" : ""}
         >
           <FontAwesomeIcon icon={["fas", "pen"]} />
-          <span>Experience</span>
+          <span>{SECTIONS.Experience}</span>
         </HashLink>
       </li>
       <li>
         <HashLink
           smooth
-          to="#portfolio"
-          className={currentSection === "portfolio" ? "actived" : ""}
+          to={`#${SECTIONS.Portfolio}`}
+          className={currentSection === SECTIONS.Portfolio ? "actived" : ""}
         >
           <FontAwesomeIcon icon={["fas", "suitcase"]} />
-          <span>Portfolio</span>
+          <span>{SECTIONS.Portfolio}</span>
         </HashLink>
       </li>
       <li>
         <HashLink
           smooth
-          to="#contacts"
-          className={currentSection === "contacts" ? "actived" : ""}
+          to={`#${SECTIONS.Contacts}`}
+          className={currentSection === SECTIONS.Contacts ? "actived" : ""}
         >
           <FontAwesomeIcon icon={["fas", "location-arrow"]} />
-          <span>Contacts</span>
+          <span>{SECTIONS.Contacts}</span>
         </HashLink>
       </li>
       <li>
         <HashLink
           smooth
-          to="#feedback"
-          className={currentSection === "feedback" ? "actived" : ""}
+          to={`#${SECTIONS.Feedback}`}
+          className={currentSection === SECTIONS.Feedback ? "actived" : ""}
         >
           <FontAwesomeIcon icon={["fas", "comment"]} />
-          <span>Feedback</span>
+          <span>{SECTIONS.Feedback}</span>
         </HashLink>
       </li>
     </ul>

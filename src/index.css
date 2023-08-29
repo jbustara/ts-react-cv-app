@@ -78,6 +78,7 @@ h3 {
 }
 .info-box h2 {
   color: var(--green);
+  text-transform: capitalize;
   font-size: 25px;
   line-height: 30px;
   margin-bottom: 40px;
@@ -209,6 +210,9 @@ h3 {
   align-items: center;
   gap: 20px;
   padding: 18px 20px;
+}
+.navigation a span {
+  text-transform: capitalize;
 }
 .navigation a:hover {
   color: var(--green);

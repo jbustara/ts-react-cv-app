@@ -15,6 +15,9 @@
     align-items: center;
     gap: 20px;
     padding: 18px 20px;
+    span {
+      text-transform: capitalize;
+    }
     &:hover {
       color: var(--green);
     }

@@ -15,14 +15,17 @@ import Timeline from "../../components/Timeline/Timeline";
 import Address from "../../components/Address/Address";
 import Portfolio from "../../components/Portfolio/Portfolio";
 import {
+  BUTTON_SHOW_FORM_TEXT,
   ERROR_FETCH_EDUCATION,
-  TEXT_EDIT_FORM,
+  SECTIONS,
+} from "../../constants";
+import {
   aboutMe,
   contacts,
   experiences,
   feedbacks,
   portfolio,
-} from "../../constants";
+} from "../../cv-data";
 import { Status } from "../../types";
 import SkillsForm from "../../components/Skills/SkillsForm";
 import Skills from "../../components/Skills/Skills";
@@ -46,11 +49,13 @@ const InnerPage = () => {
   return (
     <div className="inner-page">
       <Panel visibility={visibility} toggleVisibility={toggleVisibility} />
+
       <div className={visibility ? "content" : "content wide"}>
-        <Box title="About me" id="about">
+        <Box title={SECTIONS.AboutName} id={SECTIONS.AboutId}>
           <p>{aboutMe}</p>
         </Box>
-        <Box title="Education" id="education">
+
+        <Box title={SECTIONS.Education} id={SECTIONS.Education}>
           {status === Status.done ? (
             <Timeline education={education} />
           ) : status === Status.loading ? (
@@ -61,29 +66,35 @@ const InnerPage = () => {
             <div className="error-fetch">{ERROR_FETCH_EDUCATION}</div>
           )}
         </Box>
-        <section className="skill-box" id="skills">
-          <Box title="Skills" id="">
+
+        <section className="skill-box" id={SECTIONS.Skills}>
+          <Box title={SECTIONS.Skills} id="">
             <>{skillsIsOpen && <SkillsForm />}</>
             <Skills skills={skills} />
           </Box>
           <Button
             icon={["fas", "pen-to-square"]}
-            text={TEXT_EDIT_FORM}
+            text={BUTTON_SHOW_FORM_TEXT}
             onClick={() => dispatch(openSkills())}
           />
         </section>
-        <Box title="Experience" id="experience">
+
+        <Box title={SECTIONS.Experience} id={SECTIONS.Experience}>
           <Expertise experiences={experiences} />
         </Box>
-        <Box title="Portfolio" id="portfolio">
+
+        <Box title={SECTIONS.Portfolio} id={SECTIONS.Portfolio}>
           <Portfolio portfolio={portfolio} />
         </Box>
-        <Box title="Contacts" id="contacts">
+
+        <Box title={SECTIONS.Contacts} id={SECTIONS.Contacts}>
           <Address contacts={contacts} />
         </Box>
-        <Box title="Feedbacks" id="feedback">
+
+        <Box title={SECTIONS.Feedback} id={SECTIONS.Feedback}>
           <Feedback feedbacks={feedbacks} />
         </Box>
+
         <div className="return">
           <HashLink smooth to="#">
             <FontAwesomeIcon icon={["fas", "chevron-up"]} />

@@ -3,6 +3,7 @@ import SkillsForm from "./SkillsForm";
 import { Provider } from "react-redux";
 import { store } from "../../app/store";
 import userEvent from "@testing-library/user-event";
+import { FORM_VALUES } from "../../constants";
 
 beforeEach(() => {
   fetchMock.resetMocks();
@@ -18,13 +19,13 @@ describe("SkillsForm component", () => {
 
     //renders a form with 2 inputs and a button
     expect(
-      screen.getByRole("textbox", { name: "Skill name" })
+      screen.getByRole("textbox", { name: FORM_VALUES.NameLabel })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("spinbutton", { name: "Skill range" })
+      screen.getByRole("spinbutton", { name: FORM_VALUES.RangeLabel })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: "Add skill" })
+      screen.getByRole("button", { name: FORM_VALUES.ButtonSubmitFormName })
     ).toBeInTheDocument();
   });
 
@@ -44,15 +45,18 @@ describe("SkillsForm component", () => {
       name: "Skill name",
     }) as HTMLInputElement;
     fireEvent.change(name, { target: { value: "JavaScript" } });
+
     const range = screen.getByRole("spinbutton", {
-      name: "Skill range",
+      name: FORM_VALUES.RangeLabel,
     }) as HTMLInputElement;
     fireEvent.change(range, { target: { value: 50 } });
 
     //checking values
 
     //CLick button to post skill and fetch again all skills
-    await user.click(screen.getByRole("button", { name: "Add skill" }));
+    await user.click(
+      screen.getByRole("button", { name: FORM_VALUES.ButtonSubmitFormName })
+    );
     expect(fetchMock.mock.calls.length).toBe(2);
 
     //values cleared

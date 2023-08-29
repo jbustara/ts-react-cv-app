@@ -24,6 +24,8 @@ import {
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { education } from "../../services/db";
+import { BUTTON_PANEL_TEXT, FORM_VALUES, SECTIONS } from "../../constants";
+import { PROFILE, TITLE } from "../../cv-data";
 
 library.add(
   faUser,
@@ -81,13 +83,15 @@ describe("Inner page", () => {
       expect(fetchMock).toHaveBeenCalledTimes(2);
     });
 
-    expect(screen.getByText("Juan Camilo Bustamante")).toBeInTheDocument();
+    expect(screen.getByText(PROFILE.name)).toBeInTheDocument();
     //2 each: Panel and Content
-    expect(screen.getAllByText("Skills").length > 0).toBe(true);
-    expect(screen.getAllByText("Experience").length > 0).toBe(true);
-    expect(screen.getAllByText("Portfolio").length > 0).toBe(true);
-    expect(screen.getAllByText("Education").length > 0).toBe(true);
-    expect(screen.getAllByText(/about me/i).length > 0).toBe(true);
+    expect(screen.getAllByText(SECTIONS.AboutName).length).toBe(2);
+    expect(screen.getAllByText(SECTIONS.Education).length).toBe(2);
+    expect(screen.getAllByText(SECTIONS.Skills).length).toBe(2);
+    expect(screen.getAllByText(SECTIONS.Experience).length).toBe(2);
+    expect(screen.getAllByText(SECTIONS.Portfolio).length).toBe(2);
+    expect(screen.getAllByText(SECTIONS.Contacts).length).toBe(2);
+    expect(screen.getAllByText(SECTIONS.Feedback).length).toBe(2);
     //2 buttons: back and scroll upo
     expect(screen.getAllByRole("button").length).toBe(2);
   });
@@ -124,8 +128,8 @@ describe("Inner page", () => {
       expect(fetchMock).toHaveBeenCalledTimes(2);
     });
 
-    await user.click(screen.getByRole("button", { name: "Go back" }));
-    expect(screen.getByText("Front-End Developer")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: BUTTON_PANEL_TEXT }));
+    expect(screen.getByText(TITLE)).toBeInTheDocument();
   });
 
   it("Show Form component when click in button", async () => {
@@ -161,13 +165,13 @@ describe("Inner page", () => {
 
     //renders a form with 2 inputs and a button
     expect(
-      screen.getByRole("textbox", { name: "Skill name" })
+      screen.getByRole("textbox", { name: FORM_VALUES.NameLabel })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("spinbutton", { name: "Skill range" })
+      screen.getByRole("spinbutton", { name: FORM_VALUES.RangeLabel })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: "Add skill" })
+      screen.getByRole("button", { name: FORM_VALUES.ButtonSubmitFormName })
     ).toBeInTheDocument();
   });
 });

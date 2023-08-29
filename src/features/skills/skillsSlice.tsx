@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { SkillData } from "../../types";
+import { SKILLS_KEY_LOCAL_STORAGE } from "../../constants";
 
 interface SkillsState {
   skills: SkillData[];
@@ -11,11 +12,11 @@ export const fetchSkills = createAsyncThunk("skills/fetch", async () => {
   const data = await response.json();
   //If there is data from server: save in the localStorage.
   if (data.length) {
-    localStorage.setItem("skills", JSON.stringify(data));
+    localStorage.setItem(SKILLS_KEY_LOCAL_STORAGE, JSON.stringify(data));
     return data;
   } else {
     //If there isn't data, check if there is data in localStorage to return it and post it
-    const skillJSON = localStorage.getItem("skills");
+    const skillJSON = localStorage.getItem(SKILLS_KEY_LOCAL_STORAGE);
     if (skillJSON) {
       try {
         const data = JSON.parse(skillJSON);

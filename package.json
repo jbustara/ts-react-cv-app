@@ -83,7 +83,9 @@
     "coveragePathIgnorePatterns": [
       "server.ts",
       "types.ts",
-      "react-app-env.d.ts"
+      "react-app-env.d.ts",
+      "cv-data.ts",
+      "contants.ts"
     ]
   }
 }
