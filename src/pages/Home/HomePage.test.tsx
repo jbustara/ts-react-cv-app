@@ -24,7 +24,7 @@ import {
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { PROFILE, TITLE } from "../../cv-data";
-import { BUTTON_HOME_PAGE_TEXT } from "../../constants";
+import { BUTTON_HOME_PAGE_TEXT, SECTIONS } from "../../constants";
 
 library.add(
   faUser,
@@ -101,6 +101,6 @@ describe("Home Page", () => {
     await user.click(
       screen.getByRole("button", { name: BUTTON_HOME_PAGE_TEXT })
     );
-    expect(screen.getAllByText("Skills").length).toBe(2);
+    expect(screen.getAllByText(SECTIONS.Skills).length).toBe(2);
   });
 });
