@@ -5,7 +5,7 @@ import { SKILLS_AXES_NAMES } from "../../constants";
 interface props {
   skills: SkillData[];
 }
-const Skills = ({ skills = [] }: props) => {
+const Skills = ({ skills }: props) => {
   return (
     <div className="skills-container">
       {skills.map((skill) => {

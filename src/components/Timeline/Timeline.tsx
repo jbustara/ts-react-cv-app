@@ -6,7 +6,7 @@ interface props {
   education: EducationData[];
 }
 
-const Timeline = ({ education = [] }: props) => {
+const Timeline = ({ education }: props) => {
   return (
     <ul className="timeline-list">
       {education.map((educationItem) => {

@@ -10,7 +10,7 @@ interface props {
   portfolio: PortfolioData[];
 }
 
-const Portfolio = ({ portfolio = [] }: props) => {
+const Portfolio = ({ portfolio }: props) => {
   const isotope = useRef<Isotope | null>();
   useEffect(() => {
     isotope.current = new Isotope(".filter-container", {

@@ -6,7 +6,7 @@ interface props {
   feedbacks: FeedbackData[];
 }
 
-const Feedback = ({ feedbacks = [] }: props) => {
+const Feedback = ({ feedbacks }: props) => {
   return (
     <ul className="feedback">
       {feedbacks.map((feedback) => {

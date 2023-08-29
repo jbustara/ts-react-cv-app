@@ -5,7 +5,7 @@ interface props {
   experiences: ExperienceData[];
 }
 
-const Expertise = ({ experiences = [] }: props) => {
+const Expertise = ({ experiences }: props) => {
   return (
     <ul className="expertise-list">
       {experiences.map((experience) => {
