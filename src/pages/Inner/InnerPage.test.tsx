@@ -24,7 +24,7 @@ import {
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { education } from "../../services/db";
-import { BUTTON_PANEL_TEXT, FORM_VALUES, SECTIONS } from "../../constants";
+import { BUTTON_PANEL_TEXT, FormValues, Sections } from "../../constants";
 import { PROFILE, TITLE } from "../../cv-data";
 
 library.add(
@@ -85,13 +85,13 @@ describe("Inner page", () => {
 
     expect(screen.getByText(PROFILE.name)).toBeInTheDocument();
     //2 each: Panel and Content
-    expect(screen.getAllByText(SECTIONS.AboutName).length).toBe(2);
-    expect(screen.getAllByText(SECTIONS.Education).length).toBe(2);
-    expect(screen.getAllByText(SECTIONS.Skills).length).toBe(2);
-    expect(screen.getAllByText(SECTIONS.Experience).length).toBe(2);
-    expect(screen.getAllByText(SECTIONS.Portfolio).length).toBe(2);
-    expect(screen.getAllByText(SECTIONS.Contacts).length).toBe(2);
-    expect(screen.getAllByText(SECTIONS.Feedback).length).toBe(2);
+    expect(screen.getAllByText(Sections.ABOUT_NAME).length).toBe(2);
+    expect(screen.getAllByText(Sections.EDUCATION).length).toBe(2);
+    expect(screen.getAllByText(Sections.SKILLS).length).toBe(2);
+    expect(screen.getAllByText(Sections.EXPERIENCE).length).toBe(2);
+    expect(screen.getAllByText(Sections.PORTFOLIO).length).toBe(2);
+    expect(screen.getAllByText(Sections.CONTACTS).length).toBe(2);
+    expect(screen.getAllByText(Sections.FEEDBACK).length).toBe(2);
     //2 buttons: back and scroll upo
     expect(screen.getAllByRole("button").length).toBe(2);
   });
@@ -165,13 +165,13 @@ describe("Inner page", () => {
 
     //renders a form with 2 inputs and a button
     expect(
-      screen.getByRole("textbox", { name: FORM_VALUES.NameLabel })
+      screen.getByRole("textbox", { name: FormValues.NAME_LABEL })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("spinbutton", { name: FORM_VALUES.RangeLabel })
+      screen.getByRole("spinbutton", { name: FormValues.RANGE_LABEL })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: FORM_VALUES.ButtonSubmitFormName })
+      screen.getByRole("button", { name: FormValues.BUTTON_SUBMIT_FORM_NAME })
     ).toBeInTheDocument();
   });
 });

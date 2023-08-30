@@ -3,7 +3,7 @@ import SkillsForm from "./SkillsForm";
 import { Provider } from "react-redux";
 import { store } from "../../app/store";
 import userEvent from "@testing-library/user-event";
-import { FORM_VALUES } from "../../constants";
+import { FormValues } from "../../constants";
 
 beforeEach(() => {
   fetchMock.resetMocks();
@@ -19,13 +19,13 @@ describe("SkillsForm component", () => {
 
     //renders a form with 2 inputs and a button
     expect(
-      screen.getByRole("textbox", { name: FORM_VALUES.NameLabel })
+      screen.getByRole("textbox", { name: FormValues.NAME_LABEL })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("spinbutton", { name: FORM_VALUES.RangeLabel })
+      screen.getByRole("spinbutton", { name: FormValues.RANGE_LABEL })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: FORM_VALUES.ButtonSubmitFormName })
+      screen.getByRole("button", { name: FormValues.BUTTON_SUBMIT_FORM_NAME })
     ).toBeInTheDocument();
   });
 
@@ -47,7 +47,7 @@ describe("SkillsForm component", () => {
     fireEvent.change(name, { target: { value: "JavaScript" } });
 
     const range = screen.getByRole("spinbutton", {
-      name: FORM_VALUES.RangeLabel,
+      name: FormValues.RANGE_LABEL,
     }) as HTMLInputElement;
     fireEvent.change(range, { target: { value: 50 } });
 
@@ -55,7 +55,7 @@ describe("SkillsForm component", () => {
 
     //CLick button to post skill and fetch again all skills
     await user.click(
-      screen.getByRole("button", { name: FORM_VALUES.ButtonSubmitFormName })
+      screen.getByRole("button", { name: FormValues.BUTTON_SUBMIT_FORM_NAME })
     );
     expect(fetchMock.mock.calls.length).toBe(2);
 

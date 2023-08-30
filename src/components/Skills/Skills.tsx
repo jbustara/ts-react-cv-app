@@ -26,10 +26,10 @@ const Skills = ({ skills }: props) => {
         <div></div>
       </div>
       <div className="skill-axe">
-        <span className="beginner">{SKILLS_AXES_NAMES.Begginer}</span>
-        <span className="proficient">{SKILLS_AXES_NAMES.Proficient}</span>
-        <span className="expert">{SKILLS_AXES_NAMES.Expert}</span>
-        <span className="master">{SKILLS_AXES_NAMES.Master}</span>
+        <span className="beginner">{SKILLS_AXES_NAMES.BEGGINER}</span>
+        <span className="proficient">{SKILLS_AXES_NAMES.PROFICIENT}</span>
+        <span className="expert">{SKILLS_AXES_NAMES.EXPERT}</span>
+        <span className="master">{SKILLS_AXES_NAMES.MASTER}</span>
       </div>
     </div>
   );

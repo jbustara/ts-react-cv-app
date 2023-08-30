@@ -17,7 +17,7 @@ import Portfolio from "../../components/Portfolio/Portfolio";
 import {
   BUTTON_SHOW_FORM_TEXT,
   ERROR_FETCH_EDUCATION,
-  SECTIONS,
+  Sections,
 } from "../../constants";
 import {
   aboutMe,
@@ -51,11 +51,11 @@ const InnerPage = () => {
       <Panel visibility={visibility} toggleVisibility={toggleVisibility} />
 
       <div className={visibility ? "content" : "content wide"}>
-        <Box title={SECTIONS.AboutName} id={SECTIONS.AboutId}>
+        <Box title={Sections.ABOUT_NAME} id={Sections.ABOUT_ID}>
           <p>{aboutMe}</p>
         </Box>
 
-        <Box title={SECTIONS.Education} id={SECTIONS.Education}>
+        <Box title={Sections.EDUCATION} id={Sections.EDUCATION}>
           {status === Status.done ? (
             <Timeline education={education} />
           ) : status === Status.loading ? (
@@ -67,8 +67,8 @@ const InnerPage = () => {
           )}
         </Box>
 
-        <section className="skill-box" id={SECTIONS.Skills}>
-          <Box title={SECTIONS.Skills} id="">
+        <section className="skill-box" id={Sections.SKILLS}>
+          <Box title={Sections.SKILLS} id="">
             <>{skillsIsOpen && <SkillsForm />}</>
             <Skills skills={skills} />
           </Box>
@@ -79,19 +79,19 @@ const InnerPage = () => {
           />
         </section>
 
-        <Box title={SECTIONS.Experience} id={SECTIONS.Experience}>
+        <Box title={Sections.EXPERIENCE} id={Sections.EXPERIENCE}>
           <Expertise experiences={experiences} />
         </Box>
 
-        <Box title={SECTIONS.Portfolio} id={SECTIONS.Portfolio}>
+        <Box title={Sections.PORTFOLIO} id={Sections.PORTFOLIO}>
           <Portfolio portfolio={portfolio} />
         </Box>
 
-        <Box title={SECTIONS.Contacts} id={SECTIONS.Contacts}>
+        <Box title={Sections.CONTACTS} id={Sections.CONTACTS}>
           <Address contacts={contacts} />
         </Box>
 
-        <Box title={SECTIONS.Feedback} id={SECTIONS.Feedback}>
+        <Box title={Sections.FEEDBACK} id={Sections.FEEDBACK}>
           <Feedback feedbacks={feedbacks} />
         </Box>
 

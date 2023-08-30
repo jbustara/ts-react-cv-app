@@ -1,13 +1,16 @@
 import * as Yup from "yup";
-import { FORM_VALUES } from "../../constants";
+import { FormValues } from "../../constants";
 
 export const validationForm = Yup.object({
-  name: Yup.string().required(FORM_VALUES.MessageErrorNameRequiered),
+  name: Yup.string().required(FormValues.MESSAGE_ERROR_NAME_REQUIRED),
   range: Yup.number()
     .integer()
-    .lessThan(FORM_VALUES.RangeLimitUp + 1, FORM_VALUES.MessageErrorLimitUp)
-    .moreThan(FORM_VALUES.RangeLimitLow - 1, FORM_VALUES.MessageErrorLimitLow)
-    .required(FORM_VALUES.MessageErrorRangeRequiered),
+    .lessThan(FormValues.RANGE_LIMIT_UP + 1, FormValues.MESSAGE_ERROR_LIMIT_UP)
+    .moreThan(
+      FormValues.RANGE_LIMIT_LOW - 1,
+      FormValues.MESSAGE_ERROR_LIMIT_LOW
+    )
+    .required(FormValues.MESSAGE_ERROR_RANGE_REQUIRED),
 });
 
 export const initialValues = {
