@@ -61,7 +61,7 @@ export const feedbacks: FeedbackData[] = [
     text: "Juan Camilo automated the tracking of sales in the Department of Large Costumer at EPM, and developed our application for case creation, handling, and tracking.",
     reporter: {
       photoUrl:
-        "https://media.licdn.com/dms/image/D4E03AQHBTQ2aub-S9w/profile-displayphoto-shrink_200_200/0/1691003415253?e=1697673600&v=beta&t=HEejkwRjFs6d1_XKgxdhFHCAYQElEPeBopm6nqvlc5k",
+        "https://media.licdn.com/dms/image/D4E03AQGISdpfAktoRA/profile-displayphoto-shrink_800_800/0/1693511324217?e=1698883200&v=beta&t=I5rMm54FXXbapQeSivUw2RkwfPQbvo0DIw2zwdQRJH4",
       name: "Ana Isabel Rendon",
       citeUrl: "https://www.epm.com.co",
       site: "epm.com.co",
